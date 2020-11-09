@@ -153,7 +153,8 @@
                             type="primary"
                             class="mb10"
                             @click="exportExcel()"
-                            ><i class="el-icon-download"></i> 导出</el-button
+                            ><i class="el-icon-download"></i>
+                            列表导出</el-button
                         >
                         <el-button
                             size="mini"
@@ -203,14 +204,20 @@
                         type="index"
                         label="序号"
                         align="center"
-                        width="80"
+                        width="50"
                     ></el-table-column>
                     <el-table-column
-                        prop="barCode"
                         label="样本编号"
                         align="center"
                         width="130"
-                    ></el-table-column>
+                    >
+                        <template slot-scope="scope">
+                            <el-link
+                                @click="handleSee(scope.$index, scope.row)"
+                                >{{ scope.row.barCode }}</el-link
+                            >
+                        </template>
+                    </el-table-column>
                     <el-table-column
                         prop="name"
                         label="姓名"
@@ -311,15 +318,9 @@
                         label="操作"
                         fixed="right"
                         align="center"
-                        width="240"
+                        width="160"
                     >
                         <template slot-scope="scope">
-                            <el-button
-                                size="mini"
-                                type="success"
-                                @click="handleSee(scope.$index, scope.row)"
-                                >查看</el-button
-                            >
                             <el-button
                                 size="mini"
                                 @click="handleEdit(scope.$index, scope.row)"

@@ -4,6 +4,9 @@
  * @param {string} fmt: 日期格式字符串
  */
 export const formatDate = (value, fmt) => {
+    if (!value) {
+        return null;
+    }
     if (!fmt) {
         fmt = "yyyy-MM-dd";
     }

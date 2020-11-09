@@ -137,7 +137,15 @@ export default {
                 });
             } else {
                 // 退出
-                this.$router.replace("/login");
+                this.$confirm("确定退出么?", "提示", {
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    type: "warning"
+                })
+                    .then(() => {
+                        this.$router.replace("/login");
+                    })
+                    .catch(() => {});
             }
         },
         onSubmit() {

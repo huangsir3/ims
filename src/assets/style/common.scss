@@ -103,6 +103,13 @@ a{ text-decoration: none;}
 .el-table thead{
   color: #333333;
 }
+.el-table .el-link.el-link--default.is-underline{
+    font-size: 12px;
+    border-bottom: 1px solid #606266;
+    &:hover{
+        border: none;
+    }
+}
 
 /*表单*/
 textarea{
@@ -149,8 +156,6 @@ textarea{
         width: 130px;
     }
 }
-
-
 
 .form-box-title{
   font-size: 16px;

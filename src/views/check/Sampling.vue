@@ -137,7 +137,8 @@
                             type="primary"
                             class="mb10"
                             @click="exportExcel()"
-                            ><i class="el-icon-download"></i> 导出</el-button
+                            ><i class="el-icon-download"></i>
+                            列表导出</el-button
                         >
                     </div>
                 </div>
@@ -154,14 +155,20 @@
                         type="index"
                         label="序号"
                         align="center"
-                        width="80"
+                        width="50"
                     ></el-table-column>
                     <el-table-column
-                        prop="barCode"
                         label="样本编号"
                         align="center"
                         width="130"
-                    ></el-table-column>
+                    >
+                        <template slot-scope="scope">
+                            <el-link
+                                @click="handleSee(scope.$index, scope.row)"
+                                >{{ scope.row.barCode }}</el-link
+                            >
+                        </template>
+                    </el-table-column>
                     <el-table-column
                         prop="name"
                         label="姓名"
@@ -239,7 +246,7 @@
                             >
                         </template>
                     </el-table-column>
-                    <el-table-column
+                    <!--<el-table-column
                         label="操作"
                         fixed="right"
                         align="center"
@@ -253,7 +260,7 @@
                                 >查看</el-button
                             >
                         </template>
-                    </el-table-column>
+                    </el-table-column>-->
                 </el-table>
                 <el-pagination
                     class="mt20"

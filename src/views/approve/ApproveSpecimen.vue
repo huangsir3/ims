@@ -83,13 +83,14 @@
                             type="primary"
                             class="mb10"
                             @click="exportExcel()"
-                            ><i class="el-icon-download"></i> 导出</el-button
+                            ><i class="el-icon-download"></i>
+                            列表导出</el-button
                         >
                         <el-button
                             size="mini"
                             type="primary"
                             @click="pushCheckAll()"
-                            ><i class="el-icon-download"></i> 批量通过 ({{
+                            ><i class="el-icon-download"></i> 批量审批通过 ({{
                                 multipleSelection.length
                             }})</el-button
                         >
@@ -108,14 +109,20 @@
                         type="index"
                         label="序号"
                         align="center"
-                        width="80"
+                        width="50"
                     ></el-table-column>
                     <el-table-column
-                        prop="sampleCode"
                         label="样本编号"
                         align="center"
                         width="150"
-                    ></el-table-column>
+                    >
+                        <template slot-scope="scope">
+                            <el-link
+                                @click="handleSee(scope.$index, scope.row)"
+                                >{{ scope.row.sampleCode }}</el-link
+                            >
+                        </template>
+                    </el-table-column>
                     <el-table-column
                         prop="labCode"
                         label="实验室编号"
@@ -156,6 +163,8 @@
                         prop="corporateName"
                         label="送检单位"
                         align="center"
+                        width="170"
+                        show-overflow-tooltip
                     ></el-table-column>
                     <el-table-column label="当前状态" align="center" width="90">
                         <template slot-scope="scope">
@@ -228,15 +237,9 @@
                         label="操作"
                         fixed="right"
                         align="center"
-                        width="210"
+                        width="160"
                     >
                         <template slot-scope="scope">
-                            <el-button
-                                size="mini"
-                                type="success"
-                                @click="handleSee(scope.$index, scope.row)"
-                                >查看</el-button
-                            >
                             <el-button
                                 size="mini"
                                 type="primary"
@@ -430,13 +433,6 @@
                                 </el-form-item>
                             </el-col>
                             <el-col :lg="12">
-                                <el-form-item label="检测完成时间">
-                                    <el-input
-                                        v-model="infoForm.checkTime"
-                                    ></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :lg="12">
                                 <el-form-item label="检测人员">
                                     <el-input
                                         v-model="infoForm.experimenter"
@@ -457,6 +453,20 @@
                                             :value="item.value"
                                         ></el-option>
                                     </el-select>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :lg="12">
+                                <el-form-item label="收样时间">
+                                    <el-input
+                                        v-model="infoForm.checkTime"
+                                    ></el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :lg="12">
+                                <el-form-item label="检测完成时间">
+                                    <el-input
+                                        v-model="infoForm.checkTime"
+                                    ></el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
@@ -986,7 +996,7 @@ export default {
         // 表格通过
         handleSend(index, row) {
             this.infoForm = JSON.parse(JSON.stringify(row));
-            this.$confirm("确定推送此数据么?", "提示", {
+            this.$confirm("确定通过此数据么?", "提示", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
                 type: "warning"
@@ -1074,14 +1084,14 @@ export default {
             if (!num) {
                 this.$message({
                     showClose: true,
-                    message: "暂无可推送数据",
+                    message: "暂无可通过数据",
                     type: "error",
                     duration: 2000
                 });
                 return;
             }
 
-            this.$confirm(`确定推送这${num}条数据么?`, "提示", {
+            this.$confirm(`确定通过这${num}条数据么?`, "提示", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
                 type: "warning"
