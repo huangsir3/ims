@@ -1,0 +1,34 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 26,
+            "code": "ac1d4d9a270942a38e1a6a874fa350ad",
+            "dictionary_code": "d1b98995bc1841ca97ef2c31776af5b9",
+            "name": "达安",
+            "value": "达安"
+        },
+        {
+            "id": 27,
+            "code": "46b65073f03b46f8b5eeaabe99a3a4cf",
+            "dictionary_code": "d1b98995bc1841ca97ef2c31776af5b9",
+            "name": "伯杰",
+            "value": "伯杰"
+        },
+        {
+            "id": 28,
+            "code": "9968d1fbbbb44b13877c23fd43b0d7a1",
+            "dictionary_code": "d1b98995bc1841ca97ef2c31776af5b9",
+            "name": "圣湘",
+            "value": "圣湘"
+        },
+        {
+            "id": 29,
+            "code": "426a99a194144b9196ac25b88ae20c9a",
+            "dictionary_code": "d1b98995bc1841ca97ef2c31776af5b9",
+            "name": "硕世",
+            "value": "硕世"
+        }
+    ],
+    "count": 4
+}

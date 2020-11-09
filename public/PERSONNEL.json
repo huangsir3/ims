@@ -1,0 +1,55 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 20,
+            "code": "a69852771f7245d0999781e8141047e3",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "普通入境人员",
+            "value": "1"
+        },
+        {
+            "id": 21,
+            "code": "f2673f375a2f412ba6ebb3d16504ea15",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "入境人员密接",
+            "value": "3"
+        },
+        {
+            "id": 22,
+            "code": "13f2079993034e94981d87f076b280d1",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "国内密接",
+            "value": "2"
+        },
+        {
+            "id": 23,
+            "code": "28a0e983d7844e84a2fc83bd59ca6e8d",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "密接的密接",
+            "value": "4"
+        },
+        {
+            "id": 24,
+            "code": "dc2136420a0a4bfaa7ce4027b1eea41c",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "一般接触者",
+            "value": "5"
+        },
+        {
+            "id": 25,
+            "code": "12bc453ab2de4a9bb5915702ca8fbe3d",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "发热门诊人员",
+            "value": "6"
+        },
+        {
+            "id": 34,
+            "code": "a360d32db9104b589f5ff737469671bf",
+            "dictionary_code": "7d4e7734040149da9215380e099a473b",
+            "name": "其他",
+            "value": "7"
+        }
+    ],
+    "count": 7
+}

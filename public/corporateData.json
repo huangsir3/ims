@@ -1,0 +1,18 @@
+{
+    "error_code": "00000",
+    "code": 0,
+    "user_tip": null,
+    "message": "请求成功",
+    "data": {
+        "id": 154,
+        "uuid": "78daf4ee7cab41709a00f231331f61fa",
+        "corporate_name": "玄武区疾控中心",
+        "operator_id": "12",
+        "csu_modified": "2020-10-10 10:25:01",
+        "is_delete": 0,
+        "creation_time": "2020-09-28 13:34:11",
+        "region": "0102"
+    },
+    "count": null,
+    "number": null
+}

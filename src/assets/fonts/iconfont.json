@@ -1,0 +1,93 @@
+{
+  "id": "2152385",
+  "name": "疾控后台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17814775",
+      "name": "日志",
+      "font_class": "rizhi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "17814776",
+      "name": "用户管理",
+      "font_class": "yonghuguanli",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "17814777",
+      "name": "采样点",
+      "font_class": "caiyangdian",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "17814778",
+      "name": "报表",
+      "font_class": "baobiao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "17814779",
+      "name": "审批样本",
+      "font_class": "shenpiyangben",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "17814780",
+      "name": "检测数据",
+      "font_class": "jianceshuju",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "17814781",
+      "name": "实验管理",
+      "font_class": "shiyanguanli",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "17814782",
+      "name": "数据字典",
+      "font_class": "shujuzidian",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "17814783",
+      "name": "采样数据",
+      "font_class": "caiyangshuju",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "17811572",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "17811573",
+      "name": "密码",
+      "font_class": "mima",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "17811574",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

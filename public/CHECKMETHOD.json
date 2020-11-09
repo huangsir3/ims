@@ -1,0 +1,20 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 31,
+            "code": "e73ba1b16a004a2592551fa63cad91eb",
+            "dictionary_code": "64b02ba0bb204d3fada301f74c047b46",
+            "name": "胶体金法",
+            "value": "胶体金法"
+        },
+        {
+            "id": 32,
+            "code": "5a101faed8e54acf8a7712fe66693d53",
+            "dictionary_code": "64b02ba0bb204d3fada301f74c047b46",
+            "name": "化学发光法",
+            "value": "化学发光法"
+        }
+    ],
+    "count": 2
+}

@@ -1,0 +1,36 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "index": null,
+            "id": 248,
+            "checkCode": "b00459869b42453dbbbe482e2ca6be96",
+            "sampleCode": "3201022020 00021",
+            "labCode": "20201018-15",
+            "experimenter": "13",
+            "submitStatus": "1",
+            "checkStatus": "4",
+            "checkTime": "2020-10-28 16:04",
+            "sampleCollectionTime": null,
+            "remark": null,
+            "name": "哈哈",
+            "age": "34",
+            "sex": "女",
+            "samplingDi": "南京农业大学北门",
+            "corporateName": "玄武区疾控中心",
+            "checkType": "NUCLEICACID",
+            "samplingTimes": "2",
+            "sampleName": "6",
+            "sampleType": "NUCLEICACID",
+            "personnel": "6",
+            "closeName": "54",
+            "remarks": "66",
+            "checkResult": null,
+            "igMResult": "阴性",
+            "igGResult": "阴性",
+            "identityCard": "320102198603070295",
+            "ctype": null
+        }
+    ],
+    "count": 1
+}

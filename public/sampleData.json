@@ -1,0 +1,50 @@
+{
+    "error_code": "00000",
+    "code": 0,
+    "user_tip": null,
+    "message": "请求成功",
+    "data": [
+        {
+            "sampleCode": "3201022020 00005",
+            "corporateName": "玄武区疾控中心",
+            "name": "哈哈",
+            "checkStatus": "2",
+            "sampleName": "15",
+            "remark": null
+        },
+        {
+            "sampleCode": "3201022020 00006",
+            "corporateName": "玄武区疾控中心",
+            "name": "赵六",
+            "checkStatus": "2",
+            "sampleName": "5",
+            "remark": null
+        },
+        {
+            "sampleCode": "3201022020 00008",
+            "corporateName": "玄武区疾控中心",
+            "name": "李四",
+            "checkStatus": "2",
+            "sampleName": "6",
+            "remark": null
+        },
+        {
+            "sampleCode": "3201022020 00009",
+            "corporateName": "玄武区疾控中心",
+            "name": "张三",
+            "checkStatus": "2",
+            "sampleName": "1",
+            "remark": null
+        },
+        {
+            "sampleCode": "3201022020 00010",
+            "corporateName": "1",
+            "name": "张三1",
+            "checkStatus": "2",
+            "sampleName": "",
+            "remark": null
+        }
+    ],
+    "count": null,
+    "number": null
+}

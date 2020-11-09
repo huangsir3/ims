@@ -1,0 +1,78 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "creation_time": "2020-09-28T05:34:11.000+0000",
+            "area_address": "玄武区",
+            "barNum": 28,
+            "csu_modified": "2020-10-10T02:25:01.000+0000",
+            "operator_id": "12",
+            "corporate_name": "玄武区疾控中心",
+            "id": 154,
+            "region": "0102",
+            "uuid": "78daf4ee7cab41709a00f231331f61fa",
+            "is_delete": 0
+        },
+        {
+            "creation_time": "2020-09-29T08:19:38.000+0000",
+            "area_address": "建邺区",
+            "barNum": 0,
+            "csu_modified": "2020-09-29T08:19:38.000+0000",
+            "operator_id": "12",
+            "corporate_name": "建邺区疾控中心",
+            "id": 155,
+            "region": "0105",
+            "uuid": "f9c494c6a791405bb6bdf84519517ff6",
+            "is_delete": 0
+        },
+        {
+            "creation_time": "2020-09-29T08:19:47.000+0000",
+            "area_address": "六合区",
+            "barNum": 0,
+            "csu_modified": "2020-09-29T08:19:47.000+0000",
+            "operator_id": "12",
+            "corporate_name": "六合区疾控中心",
+            "id": 156,
+            "region": "0116",
+            "uuid": "dae9828bb36f484890e88d5c9861eedf",
+            "is_delete": 0
+        },
+        {
+            "creation_time": "2020-09-29T08:20:10.000+0000",
+            "area_address": "秦淮区",
+            "barNum": 0,
+            "csu_modified": "2020-09-29T08:20:10.000+0000",
+            "operator_id": "12",
+            "corporate_name": "秦淮区疾控中心",
+            "id": 157,
+            "region": "0104",
+            "uuid": "c3416cf92da0408a8a33dd1c32fc144d",
+            "is_delete": 0
+        },
+        {
+            "creation_time": "2020-09-29T08:20:23.000+0000",
+            "area_address": "浦口区",
+            "barNum": 0,
+            "csu_modified": "2020-09-29T08:20:23.000+0000",
+            "operator_id": "12",
+            "corporate_name": "浦口区疾控中心",
+            "id": 158,
+            "region": "0111",
+            "uuid": "62aae26c71f24bcdaabb225a8204ac73",
+            "is_delete": 0
+        },
+        {
+            "creation_time": "2020-10-08T08:13:52.000+0000",
+            "area_address": "鼓楼区",
+            "barNum": 0,
+            "csu_modified": "2020-10-08T08:13:52.000+0000",
+            "operator_id": "12",
+            "corporate_name": "1",
+            "id": 161,
+            "region": "0106",
+            "uuid": "25a5d5df6435468aa47e8843411d9a11",
+            "is_delete": 0
+        }
+    ],
+    "count": 6
+}

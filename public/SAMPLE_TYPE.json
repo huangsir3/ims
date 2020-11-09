@@ -1,0 +1,20 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 30,
+            "code": "52e3245a530e4f6581b93667af45c6dd",
+            "dictionary_code": "29782064eae14696b461f102cad89c27",
+            "name": "新冠肺炎检测",
+            "value": "1"
+        },
+        {
+            "id": 36,
+            "code": "fc36214cd24e49f481d119c61431a501",
+            "dictionary_code": "29782064eae14696b461f102cad89c27",
+            "name": "新冠肺炎检测（复核）",
+            "value": "2"
+        }
+    ],
+    "count": 2
+}

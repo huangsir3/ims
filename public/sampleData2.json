@@ -1,0 +1,41 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 41,
+            "code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "咽拭子（复核）",
+            "value": "15"
+        },
+        {
+            "id": 42,
+            "code": "958d9f021aa64ccbae1bfe1d167bd619",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "鼻拭子（复核）",
+            "value": "16"
+        },
+        {
+            "id": 43,
+            "code": "658d9f021aa55ccbae1bfe1d167bd6aa",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "痰液（复核）",
+            "value": "17"
+        },
+        {
+            "id": 44,
+            "code": "958d9f021aa64ccbae1bfe1d167dd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "肛拭子（复核）",
+            "value": "18"
+        },
+        {
+            "id": 45,
+            "code": "958d9f361aa64ccbae1bfe1d167bd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "血液（复核）",
+            "value": "19"
+        }
+    ],
+    "count": 12
+}

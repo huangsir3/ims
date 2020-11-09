@@ -1,0 +1,41 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 7,
+            "code": "5096d51c71db498183965b1a8347fb09",
+            "dictionary_code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "待采样",
+            "value": "1"
+        },
+        {
+            "id": 8,
+            "code": "77af39b00363435ab26f58b9c199c041",
+            "dictionary_code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "待收检",
+            "value": "2"
+        },
+        {
+            "id": 9,
+            "code": "5d31211a697e4000aea3f2c5eef80dd6",
+            "dictionary_code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "检测中",
+            "value": "3"
+        },
+        {
+            "id": 10,
+            "code": "e6e8b5c7e9a94b01bd14d6e493b549c1",
+            "dictionary_code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "检测完成",
+            "value": "4"
+        },
+        {
+            "id": 11,
+            "code": "5863861dc48f4623a4ffa86dc2edbda6",
+            "dictionary_code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "退回",
+            "value": "5"
+        }
+    ],
+    "count": 5
+}

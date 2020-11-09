@@ -1,0 +1,46 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 3,
+            "code": "d71f21d97a11483eb5bd2478bdbe3735",
+            "name": "STATUS"
+        },
+        {
+            "id": 4,
+            "code": "5b1cf46663bf498e9cd443bbccc8c8d7",
+            "name": "CHECK_TYPE"
+        },
+        {
+            "id": 5,
+            "code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "SAMPLE_NAME"
+        },
+        {
+            "id": 6,
+            "code": "7d4e7734040149da9215380e099a473b",
+            "name": "PERSONNEL"
+        },
+        {
+            "id": 7,
+            "code": "64b02ba0bb204d3fada301f74c047b46",
+            "name": "CHECKMETHOD"
+        },
+        {
+            "id": 8,
+            "code": "d1b98995bc1841ca97ef2c31776af5b9",
+            "name": "MANUFACTOR"
+        },
+        {
+            "id": 9,
+            "code": "29782064eae14696b461f102cad89c27",
+            "name": "SAMPLE_TYPE"
+        },
+        {
+            "id": 10,
+            "code": "21ae09cf98b742d1aaa9edc3df55cfad",
+            "name": "CHECK_METHOD_ACID"
+        }
+    ],
+    "count": 8
+}

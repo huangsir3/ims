@@ -1,0 +1,90 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 14,
+            "code": "12dec6eb0b3d4489a2d2235cd44ad46d",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "咽拭子",
+            "value": "1"
+        },
+        {
+            "id": 18,
+            "code": "3ee5c5bcceea4328bdf8e78df78023ff",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "鼻拭子",
+            "value": "11"
+        },
+        {
+            "id": 19,
+            "code": "731bf5d3b6844023a5e9b1192e0f731d",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "痰液",
+            "value": "12"
+        },
+        {
+            "id": 37,
+            "code": "958d9f021aa64ccbae1bfe1d167bd6aa",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "肛拭子",
+            "value": "5"
+        },
+        {
+            "id": 38,
+            "code": "a360d32db9104b589f5ff737469667bf",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "环境样本",
+            "value": "13"
+        },
+        {
+            "id": 39,
+            "code": "958d9f021aa64ccbae1bfe1d167bd62a",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "食品涂抹样本",
+            "value": "14"
+        },
+        {
+            "id": 40,
+            "code": "658d9f021aa64ccbae1bfe1d167bd6aa",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "血液",
+            "value": "6"
+        },
+        {
+            "id": 41,
+            "code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "咽拭子（复核）",
+            "value": "15"
+        },
+        {
+            "id": 42,
+            "code": "958d9f021aa64ccbae1bfe1d167bd619",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "鼻拭子（复核）",
+            "value": "16"
+        },
+        {
+            "id": 43,
+            "code": "658d9f021aa55ccbae1bfe1d167bd6aa",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "痰液（复核）",
+            "value": "17"
+        },
+        {
+            "id": 44,
+            "code": "958d9f021aa64ccbae1bfe1d167dd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "肛拭子（复核）",
+            "value": "18"
+        },
+        {
+            "id": 45,
+            "code": "958d9f361aa64ccbae1bfe1d167bd679",
+            "dictionary_code": "958d9f021aa64ccbae1bfe1d167bd679",
+            "name": "血液（复核）",
+            "value": "19"
+        }
+    ],
+    "count": 12
+}

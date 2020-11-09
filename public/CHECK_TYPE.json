@@ -1,0 +1,20 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "id": 12,
+            "code": "d2705bac83514a46bdcf7c777f07234d",
+            "dictionary_code": "5b1cf46663bf498e9cd443bbccc8c8d7",
+            "name": "新型冠状病毒核酸检测",
+            "value": "ANTIBODY"
+        },
+        {
+            "id": 13,
+            "code": "042d7256e26b49ccba9e0a26a69587db",
+            "dictionary_code": "5b1cf46663bf498e9cd443bbccc8c8d7",
+            "name": "新型冠状病毒抗体检测",
+            "value": "NUCLEICACID"
+        }
+    ],
+    "count": 2
+}
