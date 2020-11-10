@@ -298,6 +298,12 @@
                             >
                         </template>
                     </el-table-column>
+                    <div slot="empty">
+                        <div class="pt20">
+                            <img src="@/assets/img/none.png"/>
+                        </div>
+                        <div><span>暂无数据</span></div>
+                    </div>
                 </el-table>
                 <el-pagination
                     class="mt20"
@@ -498,13 +504,6 @@
                                             :value="item.value"
                                         ></el-option>
                                     </el-select>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :lg="12">
-                                <el-form-item label="收样时间">
-                                    <el-input
-                                        v-model="infoForm.checkTime"
-                                    ></el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :lg="12">

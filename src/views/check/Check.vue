@@ -199,7 +199,7 @@
                             type="primary"
                             class="mb10"
                             @click="pushAll()"
-                            ><i class="el-icon-upload2"></i> 批量提交审批 ({{
+                            ><i class="el-icon-upload2"></i> 批量提审 ({{
                                 sendMultipleSelection.length
                             }})</el-button
                         >
@@ -426,7 +426,7 @@
                         label="操作"
                         fixed="right"
                         align="center"
-                        width="300"
+                        width="280"
                     >
                         <template slot-scope="scope">
                             <el-button
@@ -459,7 +459,7 @@
                                         scope.row.checkStatus == '4'
                                     )
                                 "
-                                >提交审批</el-button
+                                >提审</el-button
                             >
                             <el-button
                                 size="mini"
@@ -475,6 +475,12 @@
                             >
                         </template>
                     </el-table-column>
+                    <div slot="empty">
+                        <div class="pt20">
+                            <img src="@/assets/img/none.png"/>
+                        </div>
+                        <div><span>暂无数据</span></div>
+                    </div>
                 </el-table>
                 <el-pagination
                     class="mt20"
@@ -1562,6 +1568,12 @@
                             {{ scope.row.sampleName | getSampleName(that) }}
                         </template>
                     </el-table-column>
+                    <div slot="empty">
+                        <div class="pt20">
+                            <img src="@/assets/img/none.png"/>
+                        </div>
+                        <div><span>暂无数据</span></div>
+                    </div>
                 </el-table>
                 <span slot="footer" class="dialog-footer">
                     <el-button
@@ -1832,10 +1844,10 @@ export default {
                 IgMResult: this.form.IgMResult,
                 IgGResult: this.form.IgGResult,
                 checkStatus: this.form.checkStatus,
-                collectionTime1: this.form.collectionTime
+                scBegin: this.form.collectionTime
                     ? this.formatDate(this.form.collectionTime[0])
                     : "",
-                collectionTime2: this.form.collectionTime
+                scEnd: this.form.collectionTime
                     ? this.formatDate(this.form.collectionTime[1])
                     : "",
                 checkTime1: this.form.time
@@ -1924,10 +1936,10 @@ export default {
                 })
                 .catch(() => {});
         },
-        // 表格提交审批
+        // 表格提审
         handleSend(index, row) {
             this.infoForm = JSON.parse(JSON.stringify(row));
-            this.$confirm("确定提交审批此数据么?", "提示", {
+            this.$confirm("确定提审此数据么?", "提示", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
                 type: "warning"
@@ -2014,10 +2026,10 @@ export default {
                     IgMResult: this.form.IgMResult,
                     IgGResult: this.form.IgGResult,
                     checkStatus: this.form.checkStatus,
-                    collectionTime1: this.form.collectionTime
+                    scBegin: this.form.collectionTime
                         ? this.formatDate(this.form.collectionTime[0])
                         : "",
-                    collectionTime2: this.form.collectionTime
+                    scEnd: this.form.collectionTime
                         ? this.formatDate(this.form.collectionTime[1])
                         : "",
                     checkTime1: this.form.time
@@ -2101,20 +2113,20 @@ export default {
                 })
                 .catch(() => {});
         },
-        // 批量提交审批
+        // 批量提审
         pushAll() {
             let num = this.sendMultipleSelection.length;
             if (!num) {
                 this.$message({
                     showClose: true,
-                    message: "至少选择一条提交审批",
+                    message: "至少选择一条提审",
                     type: "error",
                     duration: 2000
                 });
                 return;
             }
 
-            this.$confirm(`您当前选择了${num}条数据，确定提交审批么?`, "提示", {
+            this.$confirm(`您当前选择了${num}条数据，确定提审么?`, "提示", {
                 confirmButtonText: "确定",
                 cancelButtonText: "取消",
                 type: "warning"

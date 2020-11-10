@@ -34,6 +34,7 @@ body{
 .mtb20{ margin-top: 20px; margin-bottom: 20px;}
 .m20 { margin: 20px;}
 .mt30{ margin-top:30px;}
+.pt20{ padding-top: 20px;}
 .ml-nav{ margin-left: 200px;}
 
 .pageContent{ margin: 0 20px 20px 220px;padding-top:80px;}
@@ -136,6 +137,9 @@ textarea{
 }
 .el-form-item.no-label .el-form-item__content{
     margin-left: 0 !important;
+}
+.el-input .el-icon-circle-close, .el-date-editor .el-range__close-icon{
+    color: #F56C6C !important;
 }
 
 /*搜索框*/
