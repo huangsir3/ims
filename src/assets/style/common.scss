@@ -1,3 +1,5 @@
+@import "element-variables.scss";
+
 * {
   box-sizing: border-box;
 }
@@ -8,8 +10,8 @@ html{
 body{
   height: 100%;
   margin: 0;
-  background-color: #edf5fb;
-  color: #212121;
+  background-color: $body-bg-color;
+  color: $body-color;
 }
 
 /* 边距 */
@@ -35,7 +37,7 @@ body{
 .m20 { margin: 20px;}
 .mt30{ margin-top:30px;}
 .pt20{ padding-top: 20px;}
-.ml-nav{ margin-left: 200px;}
+.ml-nav{ margin-left: $nav-width;}
 
 .pageContent{ margin: 0 20px 20px 220px;padding-top:80px;}
 ul, li{margin:0;padding:0;list-style:none;}
@@ -56,7 +58,7 @@ a{ text-decoration: none;}
 /* 显示 */
 .display-in{ display: inline-block;}
 .display-none{ display: none;}
-.display-block{ display: block;}
+.display-block{ display: block !important;}
 
 /* 文本 */
 .text-left { text-align: left;}
@@ -101,15 +103,17 @@ a{ text-decoration: none;}
 .el-table th>.cell .el-checkbox__input{
   padding-left: 4px;
 }
-.el-table thead{
-  color: #333333;
-}
+
 .el-table .el-link.el-link--default.is-underline{
     font-size: 12px;
     border-bottom: 1px solid #C0C4CC;
     &:hover{
         border: none;
     }
+}
+/*tabs*/
+.el-tabs__item{
+    cursor: pointer;
 }
 
 /*表单*/
@@ -141,6 +145,9 @@ textarea{
 .el-input .el-icon-circle-close, .el-date-editor .el-range__close-icon{
     color: #F56C6C !important;
 }
+.line-height20.el-form-item--small .el-form-item__content, .line-height20.el-form-item--small .el-form-item__label{
+    line-height: 20px;
+}
 
 /*搜索框*/
 .box-search{
@@ -150,21 +157,25 @@ textarea{
   border: 1px solid #DDDDDD;
   border-radius: 5px;
 
-    input, select, .input-time{
-        width: 280px;
-    }
     .input-barcode{
-        width: auto;
+        width: auto !important;
     }
     .input-barcode input{
         width: 130px;
+    }
+    .input-time{
+        width: 280px !important;
+    }
+
+    input, select{
+        width: 280px;
     }
 }
 
 .form-box-title{
   font-size: 16px;
   font-weight: bold;
-  color: #212121;
+  color: $body-color;
   .icon{
     display: inline-block;
     width: 4px;

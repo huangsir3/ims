@@ -250,7 +250,7 @@
                     <el-table-column
                         label="样本编号"
                         align="center"
-                        width="130"
+                        width="145"
                     >
                         <template slot-scope="scope">
                             <el-link
@@ -477,7 +477,7 @@
                     </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>
@@ -502,6 +502,8 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
+                v-loading.fullscreen.lock="tbDialog.loading"
+                element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
                     :model="infoForm"
@@ -528,7 +530,7 @@
                                 <el-form-item label="姓名">
                                     <el-input
                                         v-model="infoForm.name"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -538,6 +540,7 @@
                                         v-model="infoForm.sex"
                                         placeholder="请选择"
                                         class="display-block"
+                                        :disabled="true"
                                     >
                                         <el-option
                                             v-for="(item, index) in sexs"
@@ -552,7 +555,7 @@
                                 <el-form-item label="年龄">
                                     <el-input
                                         v-model="infoForm.age"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -560,7 +563,7 @@
                                 <el-form-item label="证件号">
                                     <el-input
                                         v-model="infoForm.identityCard"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -570,6 +573,7 @@
                                         v-model="infoForm.sampleName"
                                         placeholder="请选择"
                                         class="display-block"
+                                        :disabled="true"
                                     >
                                         <el-option
                                             v-for="(item, index) in sampleNames"
@@ -584,7 +588,7 @@
                                 <el-form-item label="采样次数">
                                     <el-input
                                         v-model="infoForm.samplingTimes"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -594,6 +598,7 @@
                                         v-model="infoForm.corporateName"
                                         placeholder="请选择"
                                         class="display-block"
+                                        :disabled="true"
                                     >
                                         <el-option
                                             v-for="(item,
@@ -609,7 +614,7 @@
                                 <el-form-item label="采样地点">
                                     <el-input
                                         v-model="infoForm.samplingDi"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -619,6 +624,7 @@
                                         v-model="infoForm.personnel"
                                         placeholder="请选择"
                                         class="display-block"
+                                        :disabled="true"
                                     >
                                         <el-option
                                             v-for="(item, index) in personnels"
@@ -633,7 +639,7 @@
                                 <el-form-item label="密接姓名">
                                     <el-input
                                         v-model="infoForm.closeName"
-                                        :clearable="true"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -641,7 +647,7 @@
                                 <el-form-item label="备注信息">
                                     <el-input
                                         v-model="infoForm.remarks"
-                                        :clearable="true"
+                                        :disabled="true"
                                         type="textarea"
                                     ></el-input>
                                 </el-form-item>
@@ -650,8 +656,8 @@
                                 <el-form-item label="退回理由">
                                     <el-input
                                         v-model="infoForm.remark"
-                                        :clearable="true"
                                         type="textarea"
+                                        :disabled="true"
                                     ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -662,6 +668,23 @@
                             <span class="icon"></span>检测基本信息
                         </p>
                         <el-row>
+                            <el-col :lg="12">
+                                <el-form-item label="检测项目">
+                                    <el-select
+                                        v-model="infoForm.checkType"
+                                        placeholder="请选择"
+                                        :disabled="true"
+                                        class="display-block"
+                                    >
+                                        <el-option
+                                            v-for="(item, index) in sampleTypes"
+                                            :key="index"
+                                            :label="item.name"
+                                            :value="item.value"
+                                        ></el-option>
+                                    </el-select>
+                                </el-form-item>
+                            </el-col>
                             <el-col :lg="12">
                                 <el-form-item label="实验室编码">
                                     <el-input
@@ -676,22 +699,6 @@
                                         v-model="infoForm.experimenter"
                                         :clearable="true"
                                     ></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :lg="12">
-                                <el-form-item label="检测项目">
-                                    <el-select
-                                        v-model="infoForm.checkType"
-                                        placeholder="请选择"
-                                        class="display-block"
-                                    >
-                                        <el-option
-                                            v-for="(item, index) in sampleTypes"
-                                            :key="index"
-                                            :label="item.name"
-                                            :value="item.value"
-                                        ></el-option>
-                                    </el-select>
                                 </el-form-item>
                             </el-col>
                             <el-col :lg="12">
@@ -742,7 +749,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="12">
-                                    <el-form-item label="IgM抗体检测结果">
+                                    <el-form-item
+                                        label="IgM抗体检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.igMResult"
                                             placeholder="请选择"
@@ -776,7 +786,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="12">
-                                    <el-form-item label="IgG抗体检测结果">
+                                    <el-form-item
+                                        label="IgG抗体检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.igGResult"
                                             placeholder="请选择"
@@ -812,7 +825,10 @@
                         <template v-else>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="ORF_LAB基因检测结果">
+                                    <el-form-item
+                                        label="ORF_LAB基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.orf_lab_result"
                                             placeholder="请选择"
@@ -836,7 +852,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="ORF_LAB基因试剂厂商">
+                                    <el-form-item
+                                        label="ORF_LAB基因试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="
                                                 infoForm.orf_lab_manufacturer
@@ -856,7 +875,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="N基因检测结果">
+                                    <el-form-item
+                                        label="N基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.n_result"
                                             placeholder="请选择"
@@ -880,7 +902,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="N基因检测试剂厂商">
+                                    <el-form-item
+                                        label="N基因检测试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.n_manufacturer"
                                             placeholder="请选择"
@@ -898,7 +923,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="E基因检测结果">
+                                    <el-form-item
+                                        label="E基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.e_result"
                                             placeholder="请选择"
@@ -922,7 +950,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="E基因检测试剂厂商">
+                                    <el-form-item
+                                        label="E基因检测试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.e_manufacturer"
                                             placeholder="请选择"
@@ -992,7 +1023,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="returnBackDialog.loading"
+                v-loading.fullscreen.lock="returnBackDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -1040,7 +1071,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="enterResultDialog.loading"
+                v-loading.fullscreen.lock="enterResultDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -1057,6 +1088,10 @@
                                     type="textarea"
                                     :disabled="!enterResultForm.isEdit"
                                 ></el-input>
+
+                                <div class="el-form-item__error">
+                                    注：多条样本编号，以英文逗号分隔
+                                </div>
                             </el-form-item>
                         </el-col>
                         <el-col :lg="12">
@@ -1463,7 +1498,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="codeInputDialog.loading"
+                v-loading.fullscreen.lock="codeInputDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -1480,6 +1515,9 @@
                                     :clearable="true"
                                     type="textarea"
                                 ></el-input>
+                                <div class="el-form-item__error">
+                                    注：多条样本编号，以英文逗号分隔
+                                </div>
                             </el-form-item>
                         </el-col>
                         <el-col :lg="24">
@@ -1502,8 +1540,9 @@
                     </el-table-column>
                     <el-table-column
                         type="index"
-                        label="50"
+                        label="序号"
                         align="center"
+                        width="50"
                     ></el-table-column>
                     <el-table-column
                         prop="sampleCode"
@@ -1568,9 +1607,19 @@
                             {{ scope.row.sampleName | getSampleName(that) }}
                         </template>
                     </el-table-column>
+                    <el-table-column label="操作" fixed="right" align="center">
+                        <template slot-scope="scope">
+                            <el-button
+                                size="mini"
+                                type="danger"
+                                @click="handleReturn(scope.$index, scope.row)"
+                                >退回</el-button
+                            >
+                        </template>
+                    </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>
@@ -1612,7 +1661,7 @@ export default {
                 sampleName: "",
                 checkType: "",
                 collectionTime: "",
-                time: "",
+                time: [new Date(), new Date()],
                 corporateName: "",
                 checkResult: "",
                 IgMResult: "",
@@ -1715,7 +1764,8 @@ export default {
             tbDialog: {
                 isEdit: false,
                 dialogVisible: false,
-                dialogTitle: "查看采样信息"
+                dialogTitle: "查看采样信息",
+                loading: false
             },
             cTypes: [],
             sampleNames2: [],
@@ -1790,7 +1840,7 @@ export default {
                 name: "",
                 labCode: "",
                 collectionTime: "",
-                time: "",
+                time: [new Date(), new Date()],
                 sampleName: "",
                 personnel: "",
                 checkResult: "",
@@ -1986,9 +2036,40 @@ export default {
                 }
             });
         },
-        // 表格查看--确定按钮
+        // 表格编辑--确定按钮
         dialogBtnSure() {
-            this.tbDialog.dialogVisible = false;
+            if (!this.tbDialog.isEdit) {
+                this.tbDialog.dialogVisible = false;
+                return;
+            }
+
+            this.$refs["infoForm"].validate(valid => {
+                if (valid) {
+                    this.$confirm("确认修改？")
+                        .then(() => {
+                            /*let param = {
+                                userName: this.infoForm.userName,
+                                sex: this.infoForm.sex,
+                                loginName: this.infoForm.loginName,
+                                pwd: this.infoForm.pwd,
+                                phone: this.infoForm.phone,
+                                roleId: this.infoForm.roleId,
+                                samplingUnitID: this.samplingUnitID,
+                                cdcCode: this.cdcCode
+                            };*/
+
+                            this.tbDialog.loading = true;
+                            setTimeout(() => {
+                                this.tbDialog.loading = false;
+
+                                this.tbDialog.dialogVisible = false;
+                            }, 1000);
+                        })
+                        .catch(() => {});
+                } else {
+                    return false;
+                }
+            });
         },
         // 导出
         exportExcel() {

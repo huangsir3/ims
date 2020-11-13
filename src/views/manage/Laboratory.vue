@@ -87,7 +87,7 @@
                     </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>
@@ -112,7 +112,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="tbDialog.loading"
+                v-loading.fullscreen.lock="tbDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form

@@ -29,21 +29,6 @@
                                 :clearable="true"
                                 class="input-barcode"
                             ></el-input>
-                            <!--<el-col :span="11">
-                                <el-input
-                                    placeholder="样本编号1"
-                                    v-model="form.barCode1"
-                                    :clearable="true"
-                                ></el-input>
-                            </el-col>
-                            <el-col class="text-center" :span="2">~</el-col>
-                            <el-col :span="11">
-                                <el-input
-                                    placeholder="样本编号2"
-                                    v-model="form.barCode2"
-                                    :clearable="true"
-                                ></el-input>
-                            </el-col>-->
                         </el-form-item>
                         <el-form-item label="姓名">
                             <el-input
@@ -209,7 +194,7 @@
                     <el-table-column
                         label="样本编号"
                         align="center"
-                        width="130"
+                        width="145"
                     >
                         <template slot-scope="scope">
                             <el-link
@@ -323,12 +308,14 @@
                         <template slot-scope="scope">
                             <el-button
                                 size="mini"
+                                :disabled="scope.row.statusCode=='4' || scope.row.statusCode=='5'"
                                 @click="handleEdit(scope.$index, scope.row)"
                                 >编辑</el-button
                             >
                             <el-button
                                 size="mini"
                                 type="danger"
+                                :disabled="scope.row.statusCode=='3' || scope.row.statusCode=='4' || scope.row.statusCode=='5'"
                                 @click="handleDelete(scope.$index, scope.row)"
                                 >删除</el-button
                             >
@@ -336,7 +323,7 @@
                     </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>
@@ -361,7 +348,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="tbDialog.loading"
+                v-loading.fullscreen.lock="tbDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -544,7 +531,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="markDialog.loading"
+                v-loading.fullscreen.lock="markDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -558,10 +545,18 @@
                         prop="corporateName"
                         :rules="[{ required: true, message: '不能为空' }]"
                     >
-                        <el-input
+                        <el-select
                             v-model="markForm.corporateName"
-                            :clearable="true"
-                        ></el-input>
+                            placeholder="请选择"
+                            class="display-block"
+                        >
+                            <el-option
+                                v-for="(item, index) in corporateNames"
+                                :key="index"
+                                :label="item.name"
+                                :value="item.name"
+                            ></el-option>
+                        </el-select>
                     </el-form-item>
                     <el-form-item
                         label="检测数量"
@@ -592,7 +587,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="checkprintDialog.loading"
+                v-loading.fullscreen.lock="checkprintDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form
@@ -978,8 +973,13 @@ export default {
                 })
                 .catch(() => {});
         },
-        // 表格编辑确定按钮
+        // 表格编辑--确定按钮
         dialogBtnSure() {
+            if (!this.tbDialog.isEdit) {
+                this.tbDialog.dialogVisible = false;
+                return;
+            }
+
             this.$refs["infoForm"].validate(valid => {
                 if (valid) {
                     this.$confirm("确认修改？")

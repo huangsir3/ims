@@ -100,7 +100,7 @@
                     </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>

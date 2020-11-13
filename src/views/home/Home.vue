@@ -54,7 +54,7 @@ export default {
 .home {
     height: 100%;
     background: url("../../assets/img/home/home_bg.png") center center no-repeat
-        #edf5fb;
+        $body-bg-color;
     background-size: 100% 100%;
 }
 .datetime {
@@ -63,8 +63,8 @@ export default {
     right: 15px;
 }
 .time {
-    height: 60px;
-    line-height: 60px;
+    height: $header-height;
+    line-height: $header-height;
     font-weight: bold;
 }
 ul {
@@ -99,7 +99,7 @@ ul {
             width: 100%;
             height: 100%;
             line-height: 760px;
-            color: #212121;
+            color: $body-color;
         }
 
         &:hover {

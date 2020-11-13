@@ -72,23 +72,41 @@ export default {
                 return;
             }
 
-            var path = "";
+            let userInfo = {
+                userName: "黄sir",
+                loginName: "huang",
+                roleId: "superAdmin",
+                roleName: "超级管理员"
+            };
 
-            switch (path) {
-                case "1":
+            /*
+             * 角色roleId取值：
+             * 超级管理员："superAdmin"
+             * 管理员："admin"
+             * 采集人员："cjr"
+             * 检测人员："jcr"
+             * 审批人员："spr"
+             * */
+
+            sessionStorage.setItem("USERINFO", JSON.stringify(userInfo));
+
+            let path = "";
+
+            switch (userInfo.roleId) {
+                case "superAdmin":
                     path = "/collect";
                     break;
-                case "2":
-                    path = "/check";
-                    break;
-                case "3":
-                    path = "/approve";
-                    break;
-                case "4":
+                case "admin":
                     path = "/manage";
                     break;
-                default:
+                case "cjr":
                     path = "/collect";
+                    break;
+                case "jcr":
+                    path = "/check";
+                    break;
+                case "spr":
+                    path = "/approve";
                     break;
             }
             // 跳转

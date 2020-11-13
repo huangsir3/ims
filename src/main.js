@@ -4,12 +4,13 @@ import router from "./router";
 import store from "./store";
 import * as filters from "./filters/filters";
 import ElementUI from "element-ui";
+import md5 from 'js-md5';
 import Print from "vue-print-nb";
-import "element-ui/lib/theme-chalk/index.css";
 import "@/assets/fonts/iconfont.css";
 import "@/assets/style/common.scss";
 
 Vue.config.productionTip = false;
+Vue.prototype.$md5 = md5;
 Vue.use(ElementUI);
 Vue.use(Print);
 

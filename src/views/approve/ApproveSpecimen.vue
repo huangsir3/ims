@@ -114,7 +114,7 @@
                     <el-table-column
                         label="样本编号"
                         align="center"
-                        width="150"
+                        width="145"
                     >
                         <template slot-scope="scope">
                             <el-link
@@ -256,7 +256,7 @@
                     </el-table-column>
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>
@@ -432,20 +432,6 @@
                         </p>
                         <el-row>
                             <el-col :lg="12">
-                                <el-form-item label="实验室编码">
-                                    <el-input
-                                        v-model="infoForm.labCode"
-                                    ></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :lg="12">
-                                <el-form-item label="检测人员">
-                                    <el-input
-                                        v-model="infoForm.experimenter"
-                                    ></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :lg="12">
                                 <el-form-item label="检测项目">
                                     <el-select
                                         v-model="infoForm.checkType"
@@ -459,6 +445,20 @@
                                             :value="item.value"
                                         ></el-option>
                                     </el-select>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :lg="12">
+                                <el-form-item label="实验室编码">
+                                    <el-input
+                                        v-model="infoForm.labCode"
+                                    ></el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :lg="12">
+                                <el-form-item label="检测人员">
+                                    <el-input
+                                        v-model="infoForm.experimenter"
+                                    ></el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :lg="12">
@@ -508,7 +508,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="12">
-                                    <el-form-item label="IgM抗体检测结果">
+                                    <el-form-item
+                                        label="IgM抗体检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.igMResult"
                                             placeholder="请选择"
@@ -542,7 +545,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="12">
-                                    <el-form-item label="IgG抗体检测结果">
+                                    <el-form-item
+                                        label="IgG抗体检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.igGResult"
                                             placeholder="请选择"
@@ -578,7 +584,10 @@
                         <template v-else>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="ORF_LAB基因检测结果">
+                                    <el-form-item
+                                        label="ORF_LAB基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.orf_lab_result"
                                             placeholder="请选择"
@@ -602,7 +611,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="ORF_LAB基因试剂厂商">
+                                    <el-form-item
+                                        label="ORF_LAB基因试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="
                                                 infoForm.orf_lab_manufacturer
@@ -622,7 +634,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="N基因检测结果">
+                                    <el-form-item
+                                        label="N基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.n_result"
                                             placeholder="请选择"
@@ -646,7 +661,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="N基因检测试剂厂商">
+                                    <el-form-item
+                                        label="N基因检测试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.n_manufacturer"
                                             placeholder="请选择"
@@ -664,7 +682,10 @@
                             </el-row>
                             <el-row>
                                 <el-col :lg="8">
-                                    <el-form-item label="E基因检测结果">
+                                    <el-form-item
+                                        label="E基因检测结果"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.e_result"
                                             placeholder="请选择"
@@ -688,7 +709,10 @@
                                     </el-form-item>
                                 </el-col>
                                 <el-col :lg="8">
-                                    <el-form-item label="E基因检测试剂厂商">
+                                    <el-form-item
+                                        label="E基因检测试剂厂商"
+                                        class="line-height20"
+                                    >
                                         <el-select
                                             v-model="infoForm.e_manufacturer"
                                             placeholder="请选择"
@@ -752,7 +776,7 @@
                 :append-to-body="true"
                 :close-on-click-modal="false"
                 :close-on-press-escape="false"
-                v-loading.lock="returnBackDialog.loading"
+                v-loading.fullscreen.lock="returnBackDialog.loading"
                 element-loading-background="rgba(255, 255, 255, 0.5)"
             >
                 <el-form

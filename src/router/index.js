@@ -134,4 +134,13 @@ const router = new VueRouter({
     routes
 });
 
+router.beforeEach((to, from, next) => {
+    let userInfo_str = sessionStorage.getItem("USERINFO");
+    if (!userInfo_str && to.path != "/login") {
+        next("/");
+    } else {
+        next();
+    }
+});
+
 export default router;

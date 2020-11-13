@@ -160,7 +160,7 @@
                     <el-table-column
                         label="样本编号"
                         align="center"
-                        width="130"
+                        width="145"
                     >
                         <template slot-scope="scope">
                             <el-link
@@ -263,7 +263,7 @@
                     </el-table-column>-->
                     <div slot="empty">
                         <div class="pt20">
-                            <img src="@/assets/img/none.png"/>
+                            <img src="@/assets/img/none.png" />
                         </div>
                         <div><span>暂无数据</span></div>
                     </div>

@@ -101,7 +101,7 @@ export default {
         };
         return {
             datetime: "",
-            userName: "超级管理员",
+            userName: "",
             dialogVisible: false,
             int: null,
             updatePwdForm: {
@@ -121,6 +121,10 @@ export default {
         clearInterval(this.int);
     },
     created() {
+        // 获取用户信息
+        let userInfo = JSON.parse(sessionStorage.getItem("USERINFO"));
+        this.userName = userInfo.userName;
+
         this.datetime = Date.now();
 
         this.int = setInterval(() => {
@@ -143,6 +147,7 @@ export default {
                     type: "warning"
                 })
                     .then(() => {
+                        sessionStorage.removeItem("USERINFO");
                         this.$router.replace("/login");
                     })
                     .catch(() => {});
@@ -153,7 +158,29 @@ export default {
                 if (valid) {
                     this.$confirm("确认修改？")
                         .then(() => {
-                            this.dialogVisible = false;
+                            let param = {
+                                oldPaw: this.$md5(this.updatePwdForm.oldPaw),
+                                newPwd: this.$md5(this.updatePwdForm.newPwd)
+                            };
+
+
+                            const loading = this.$loading({
+                                lock: true,
+                                background: 'rgba(255, 255, 255, 0.5)'
+                            });
+
+                            setTimeout(() => {
+                                loading.close();
+
+                                this.dialogVisible = false;
+                                this.$message({
+                                    showClose: true,
+                                    message: "修改成功",
+                                    type: "success",
+                                    duration: 2000
+                                });
+                            }, 1000);
+
                         })
                         .catch(() => {});
                 } else {
@@ -174,17 +201,17 @@ export default {
 .header {
     position: fixed;
     top: 0;
-    left: 200px;
+    left: $nav-width;
     right: 0;
-    height: 60px;
+    height: $header-height;
     background-color: #fff;
-    border-bottom: 1px solid #edf5fb;
+    border-bottom: 1px solid $body-bg-color;
     z-index: 9;
 }
 .el-dropdown {
     float: right;
-    height: 60px;
-    line-height: 60px;
+    height: $header-height;
+    line-height: $header-height;
     padding: 0 15px;
     cursor: pointer;
     &:hover {
@@ -192,15 +219,15 @@ export default {
     }
 }
 .user-icon {
-    width: 30px;
-    height: 30px;
+    width: $header-height / 2;
+    height: $header-height / 2;
     border-radius: 50%;
     vertical-align: -10px;
     margin-right: 10px;
 }
 .time {
-    height: 60px;
-    line-height: 60px;
+    height: $header-height;
+    line-height: $header-height;
     font-weight: bold;
 }
 </style>

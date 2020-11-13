@@ -13,14 +13,22 @@
             text-color="#aaa"
             active-text-color="#fff"
         >
-            <el-menu-item
-                v-for="(item, index) in navList"
-                :index="item.index"
-                :key="index"
-            >
-                <i class="mr5 iconfont" :class="item.icon"></i>
-                <span slot="title">{{ item.title }}</span>
-            </el-menu-item>
+            <template v-for="(item, index) in navList">
+                <el-menu-item
+                    :index="index + ''"
+                    :key="index"
+                    v-if="
+                        roleId == 'superAdmin' ||
+                            (roleId == 'admin' && item.system == '管理系统') ||
+                            (roleId == 'cjr' && item.system == '采集系统') ||
+                            (roleId == 'jcr' && item.system == '检测系统') ||
+                            (roleId == 'spr' && item.system == '审批系统')
+                    "
+                >
+                    <i class="mr5 iconfont" :class="item.icon"></i>
+                    <span slot="title">{{ item.title }}</span>
+                </el-menu-item>
+            </template>
         </el-menu>
     </div>
 </template>
@@ -30,91 +38,80 @@ export default {
     props: ["itemActive"],
     data() {
         return {
+            roleId: "",
             navList: [
                 {
-                    index: "0",
                     title: "采样数据",
                     icon: "iconcaiyangshuju",
                     link: "/collect/sampling",
                     system: "采集系统"
                 },
                 {
-                    index: "1",
                     title: "检测数据",
                     icon: "iconjianceshuju",
                     link: "/collect/check",
                     system: "采集系统"
                 },
                 {
-                    index: "2",
                     title: "采样数据",
                     icon: "iconcaiyangshuju",
                     link: "/check/sampling",
                     system: "检测系统"
                 },
                 {
-                    index: "3",
                     title: "检测数据",
                     icon: "iconjianceshuju",
                     link: "/check/check",
                     system: "检测系统"
                 },
                 {
-                    index: "4",
                     title: "审批样本",
                     icon: "iconshenpiyangben",
                     link: "/approve/approveSpecimen",
                     system: "审批系统"
                 },
                 {
-                    index: "5",
                     title: "用户管理",
                     icon: "iconyonghuguanli",
                     link: "/manage/user",
                     system: "管理系统"
                 },
                 {
-                    index: "6",
                     title: "采样点管理",
                     icon: "iconcaiyangdian",
                     link: "/manage/samplingPoint",
                     system: "管理系统"
                 },
                 {
-                    index: "7",
                     title: "实验室管理",
                     icon: "iconshiyanguanli",
                     link: "/manage/laboratory",
                     system: "管理系统"
                 },
                 {
-                    index: "8",
                     title: "数据字典管理",
                     icon: "iconshujuzidian",
                     link: "/manage/dict",
                     system: "管理系统"
                 },
                 {
-                    index: "9",
                     title: "报表管理",
                     icon: "iconbaobiao",
                     link: "/manage/report",
                     system: "管理系统"
                 },
                 {
-                    index: "10",
                     title: "操作日志",
                     icon: "iconrizhi",
                     link: "/manage/log",
                     system: "管理系统"
-                },
+                } /*,
                 {
-                    index: "11",
                     title: "角色管理",
                     icon: "iconyonghuguanli",
                     link: "/manage/role",
                     system: "管理系统"
-                }
+                }*/
             ]
         };
     },
@@ -123,7 +120,11 @@ export default {
             return this.navList[Number.parseInt(this.itemActive)].system;
         }
     },
-    created() {},
+    created() {
+        // 获取用户信息
+        let userInfo = JSON.parse(sessionStorage.getItem("USERINFO"));
+        this.roleId = userInfo.roleId;
+    },
     methods: {
         select(index) {
             let path = this.navList[Number.parseInt(index)].link;
@@ -147,13 +148,13 @@ export default {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 200px;
+    width: $nav-width;
     background-color: #001529;
     z-index: 9;
 }
 .header-title {
-    height: 60px;
-    line-height: 60px;
+    height: $header-height;
+    line-height: $header-height;
     padding-left: 20px;
     font-size: 20px;
     background: #002140;
